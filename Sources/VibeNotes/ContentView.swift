@@ -649,7 +649,7 @@ class UndoIsolatedTextView: NSTextView {
     
     init(privateUndoManager: UndoManager) {
         self._privateUndoManager = privateUndoManager
-        super.init(frame: .zero)
+        super.init(frame: .zero, textContainer: nil)
     }
     
     required init?(coder: NSCoder) { fatalError() }
