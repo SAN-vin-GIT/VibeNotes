@@ -1,0 +1,480 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write swift-version--1AB21518FC5DEDBE.txt
+[2/11] Compiling VibeNotes SidePanel.swift
+5.78ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:5:5	initializer VibeNotes.(file).SidePanel.init(contentRect:backing:defer:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:5:5
+0.06ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:23:37	getter VibeNotes.(file).SidePanel._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:23:37
+0.10ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:4:26	initializer VibeNotes.(file).SidePanel.init(contentRect:styleMask:backing:defer:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:4:26
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:4:7	deinitializer VibeNotes.(file).SidePanel.deinit@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/SidePanel.swift:4:7
+0.02ms	<invalid loc>	getter AppKit.(file).NSWindow extension.StyleMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.StyleMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.StyleMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.CollectionBehavior._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.CollectionBehavior._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.StyleMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.Level._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.CollectionBehavior._
+[3/11] Compiling VibeNotes main.swift
+[4/11] Compiling VibeNotes NoteStore.swift
+0.18ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.09ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:5:20
+0.20ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.11ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:6:20
+0.09ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.13ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.09ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:7:20
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.07ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.07ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:8:20
+0.15ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.09ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:9:20
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:11:17	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:11:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:12:17	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:12:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:12:17	setter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:12:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:12:17	_modify accessor VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:12:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:13:17	getter VibeNotes.(file).NoteStore._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:13:17
+10.54ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:15:5	initializer VibeNotes.(file).NoteStore.init()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:15:5
+1.98ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:39:18	instance method VibeNotes.(file).NoteStore.setupDebouncedSave()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:39:18
+14.20ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:47:10	instance method VibeNotes.(file).NoteStore.noteCount(for:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:47:10
+0.46ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:51:10	instance method VibeNotes.(file).NoteStore.addFolder(name:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:51:10
+2.82ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:58:10	instance method VibeNotes.(file).NoteStore.renameFolder(id:newName:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:58:10
+11.33ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:65:10	instance method VibeNotes.(file).NoteStore.removeFolder(id:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:65:10
+1.18ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:78:10	instance method VibeNotes.(file).NoteStore.addNote(title:content:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:78:10
+0.10ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:85:10	instance method VibeNotes.(file).NoteStore.selectFolder@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:85:10
+0.06ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:91:10	instance method VibeNotes.(file).NoteStore.selectNote@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:91:10
+0.10ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:96:10	instance method VibeNotes.(file).NoteStore.removeNote(at:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:96:10
+4.61ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:101:10	instance method VibeNotes.(file).NoteStore.removeNote(id:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:101:10
+6.38ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:111:10	instance method VibeNotes.(file).NoteStore.moveFolder(draggedId:targetId:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:111:10
+16.57ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:124:10	instance method VibeNotes.(file).NoteStore.moveNote(draggedId:targetId:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:124:10
+0.24ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:144:10	instance method VibeNotes.(file).NoteStore.scheduleSave()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:144:10
+2.10ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:148:10	instance method VibeNotes.(file).NoteStore.save()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:148:10
+1.86ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:168:18	instance method VibeNotes.(file).NoteStore.load()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:168:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:4:7	deinitializer VibeNotes.(file).NoteStore.deinit@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:4:7
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:183:9	getter VibeNotes.(file).DataContent._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:183:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:184:9	getter VibeNotes.(file).DataContent._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:184:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:185:9	getter VibeNotes.(file).DataContent._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:185:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:186:9	getter VibeNotes.(file).DataContent._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/NoteStore.swift:186:9
+0.01ms	<invalid loc>	static method VibeNotes.(file).DataContent.CodingKeys.__derived_enum_equals
+0.02ms	<invalid loc>	getter VibeNotes.(file).DataContent.CodingKeys._
+0.13ms	<invalid loc>	instance method VibeNotes.(file).DataContent.CodingKeys.hash(into:)
+0.07ms	<invalid loc>	getter VibeNotes.(file).DataContent.CodingKeys._
+0.74ms	<invalid loc>	initializer VibeNotes.(file).DataContent.CodingKeys.init(stringValue:)
+0.02ms	<invalid loc>	getter VibeNotes.(file).DataContent.CodingKeys._
+0.01ms	<invalid loc>	initializer VibeNotes.(file).DataContent.CodingKeys.init(intValue:)
+1.80ms	<invalid loc>	initializer VibeNotes.(file).DataContent.init(from:)
+1.63ms	<invalid loc>	instance method VibeNotes.(file).DataContent.encode(to:)
+0.01ms	<invalid loc>	getter Foundation.(file).FileManager extension.SearchPathDomainMask._
+[5/11] Compiling VibeNotes Models.swift
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:4:9	getter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:4:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:5:9	getter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:5:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:5:9	setter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:5:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:5:9	_modify accessor VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:5:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:6:9	getter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:6:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:6:9	setter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:6:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:6:9	_modify accessor VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:6:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:7:9	getter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:7:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:7:9	setter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:7:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:7:9	_modify accessor VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:7:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:8:9	getter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:8:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:8:9	setter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:8:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:8:9	_modify accessor VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:8:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:9:9	getter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:9:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:9:9	setter VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:9:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:9:9	_modify accessor VibeNotes.(file).Note._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:9:9
+0.58ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:11:5	initializer VibeNotes.(file).Note.init(id:title:content:folderId:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:11:5
+0.03ms	<invalid loc>	static method VibeNotes.(file).Note.CodingKeys.__derived_enum_equals
+0.02ms	<invalid loc>	getter VibeNotes.(file).Note.CodingKeys._
+0.23ms	<invalid loc>	instance method VibeNotes.(file).Note.CodingKeys.hash(into:)
+0.11ms	<invalid loc>	getter VibeNotes.(file).Note.CodingKeys._
+1.05ms	<invalid loc>	initializer VibeNotes.(file).Note.CodingKeys.init(stringValue:)
+0.04ms	<invalid loc>	getter VibeNotes.(file).Note.CodingKeys._
+0.01ms	<invalid loc>	initializer VibeNotes.(file).Note.CodingKeys.init(intValue:)
+2.39ms	<invalid loc>	initializer VibeNotes.(file).Note.init(from:)
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:22:9	getter VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:22:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:23:9	getter VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:23:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:23:9	setter VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:23:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:23:9	_modify accessor VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:23:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:24:9	getter VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:24:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:24:9	setter VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:24:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:24:9	_modify accessor VibeNotes.(file).Folder._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:24:9
+0.17ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:26:5	initializer VibeNotes.(file).Folder.init(id:name:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/Models.swift:26:5
+0.01ms	<invalid loc>	static method VibeNotes.(file).Folder.CodingKeys.__derived_enum_equals
+0.01ms	<invalid loc>	getter VibeNotes.(file).Folder.CodingKeys._
+0.11ms	<invalid loc>	instance method VibeNotes.(file).Folder.CodingKeys.hash(into:)
+0.06ms	<invalid loc>	getter VibeNotes.(file).Folder.CodingKeys._
+0.31ms	<invalid loc>	initializer VibeNotes.(file).Folder.CodingKeys.init(stringValue:)
+0.06ms	<invalid loc>	getter VibeNotes.(file).Folder.CodingKeys._
+0.01ms	<invalid loc>	initializer VibeNotes.(file).Folder.CodingKeys.init(intValue:)
+0.67ms	<invalid loc>	initializer VibeNotes.(file).Folder.init(from:)
+1.92ms	<invalid loc>	instance method VibeNotes.(file).Note.encode(to:)
+0.61ms	<invalid loc>	instance method VibeNotes.(file).Folder.encode(to:)
+[6/11] Compiling VibeNotes AppDelegate.swift
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:5:9	getter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:5:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:5:9	setter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:5:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:5:9	_modify accessor VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:5:9
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	getter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	setter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	_modify accessor VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	getter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	getter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	setter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24	_modify accessor VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:6:24
+7.88ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:8:25	getter VibeNotes.(file).TriggerButtonView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:8:25
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:33:9	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:33:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:33:9	setter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:33:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:33:9	_modify accessor VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:33:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:34:9	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:34:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:34:9	setter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:34:9
+0.00ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:34:9	_modify accessor VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:34:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:35:9	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:35:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:35:9	setter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:35:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:35:9	_modify accessor VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:35:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:37:17	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:37:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:37:17	setter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:37:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:37:17	_modify accessor VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:37:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:38:17	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:38:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:38:17	setter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:38:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:38:17	_modify accessor VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:38:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:39:17	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:39:17
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:40:17	getter VibeNotes.(file).AppDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:40:17
+7.68ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:42:10	instance method VibeNotes.(file).AppDelegate.applicationDidFinishLaunching@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:42:10
+11.96ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:52:10	instance method VibeNotes.(file).AppDelegate.setupMenu()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:52:10
+7.52ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:74:10	instance method VibeNotes.(file).AppDelegate.setupPanel()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:74:10
+4.62ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:94:10	instance method VibeNotes.(file).AppDelegate.setupHandle()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:94:10
+3.32ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:126:10	instance method VibeNotes.(file).AppDelegate.toggleHeight()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:126:10
+2.32ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:145:10	instance method VibeNotes.(file).AppDelegate.togglePanel(expand:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:145:10
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:32:52	initializer VibeNotes.(file).AppDelegate.init()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:32:52
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:32:7	deinitializer VibeNotes.(file).AppDelegate.deinit@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/AppDelegate.swift:32:7
+0.01ms	<invalid loc>	instance method SwiftUI.(file).View extension.onHover(perform:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.shadow(color:radius:x:y:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.overlay(_:alignment:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).Shape extension.fill(_:style:)
+0.00ms	<invalid loc>	instance method SwiftUICore.(file).Shape extension.stroke(_:lineWidth:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).Shape extension.stroke(style:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.frame(width:height:alignment:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.environmentObject
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.environment
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.StyleMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.CollectionBehavior._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.CollectionBehavior._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.StyleMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.Level._
+0.01ms	<invalid loc>	getter AppKit.(file).NSWindow extension.CollectionBehavior._
+0.00ms	<invalid loc>	getter QuartzCore.(file).CAMediaTimingFunctionName._
+[7/11] Compiling VibeNotes ContentView.swift
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:6:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:7:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:10:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:11:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	setter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24	_modify accessor VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:12:24
+0.10ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:17:22	getter VibeNotes.(file).ContentView.DeletableItem._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:17:22
+56.56ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:25:25	getter VibeNotes.(file).ContentView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:25:25
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:5:8	initializer VibeNotes.(file).ContentView.init()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:5:8
+0.03ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:148:28
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:149:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:150:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	setter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24	_modify accessor VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:152:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:158:32	getter VibeNotes.(file).FolderListView.<anonymous>.explicit closure discriminator=65535.explicit closure discriminator=65535.explicit closure discriminator=65535._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:158:32
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:158:32	getter VibeNotes.(file).FolderListView.<anonymous>.explicit closure discriminator=65535.explicit closure discriminator=65535.explicit closure discriminator=65535._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:158:32
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:158:32	setter VibeNotes.(file).FolderListView.<anonymous>.explicit closure discriminator=65535.explicit closure discriminator=65535.explicit closure discriminator=65535._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:158:32
+28.87ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:154:25	getter VibeNotes.(file).FolderListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:154:25
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:211:9	getter VibeNotes.(file).FolderIconView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:211:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:212:9	getter VibeNotes.(file).FolderIconView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:212:9
+52.24ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:214:26	getter VibeNotes.(file).FolderIconView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:214:26
+1.91ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:224:25	getter VibeNotes.(file).FolderIconView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:224:25
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:238:28
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:239:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:240:18
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	setter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24	_modify accessor VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:242:24
+4.25ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:244:34	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:244:34
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:266:32	getter VibeNotes.(file).NoteListView.<anonymous>.explicit closure discriminator=65535.explicit closure discriminator=65535.explicit closure discriminator=65535._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:266:32
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:266:32	getter VibeNotes.(file).NoteListView.<anonymous>.explicit closure discriminator=65535.explicit closure discriminator=65535.explicit closure discriminator=65535._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:266:32
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:266:32	setter VibeNotes.(file).NoteListView.<anonymous>.explicit closure discriminator=65535.explicit closure discriminator=65535.explicit closure discriminator=65535._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:266:32
+18.76ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:262:25	getter VibeNotes.(file).NoteListView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:262:25
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:298:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:299:9	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:299:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:300:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:301:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:303:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	setter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29	_modify accessor VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:304:29
+3.16ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:306:26	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:306:26
+25.41ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:310:25	getter VibeNotes.(file).NoteRowView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:310:25
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28	setter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28	_modify accessor VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:429:28
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	setter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	_modify accessor VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	setter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18	_modify accessor VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:430:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	setter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	_modify accessor VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	setter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24	_modify accessor VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:431:24
+2.12ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:433:25	getter VibeNotes.(file).NoteEditorView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:433:25
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	setter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	_modify accessor VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	setter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18	_modify accessor VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:456:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	setter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	_modify accessor VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	setter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18	_modify accessor VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:457:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:458:9	getter VibeNotes.(file).AutoExpandingTextView._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:458:9
+7.56ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:460:10	instance method VibeNotes.(file).AutoExpandingTextView.makeNSView(context:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:460:10
+5.98ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:483:10	instance method VibeNotes.(file).AutoExpandingTextView.updateNSView(_:context:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:483:10
+0.09ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:516:10	instance method VibeNotes.(file).AutoExpandingTextView.makeCoordinator()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:516:10
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:521:13	getter VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:521:13
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:521:13	setter VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:521:13
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:521:13	_modify accessor VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:521:13
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:522:21	getter VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:522:21
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:522:21	setter VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:522:21
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:522:21	_modify accessor VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:522:21
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:523:13	getter VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:523:13
+0.00ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:523:13	setter VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:523:13
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:523:13	_modify accessor VibeNotes.(file).AutoExpandingTextView.Coordinator._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:523:13
+0.07ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:525:9	initializer VibeNotes.(file).AutoExpandingTextView.Coordinator.init(_:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:525:9
+7.12ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:529:14	instance method VibeNotes.(file).AutoExpandingTextView.Coordinator.setupNotifications(for:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:529:14
+5.27ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:552:22	instance method VibeNotes.(file).AutoExpandingTextView.Coordinator.toggleTrait(in:trait:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:552:22
+0.66ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:569:22	instance method VibeNotes.(file).AutoExpandingTextView.Coordinator.toggleAttribute(in:key:value:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:569:22
+0.24ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:583:14	instance method VibeNotes.(file).AutoExpandingTextView.Coordinator.textDidChange@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:583:14
+0.04ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:520:53	initializer VibeNotes.(file).AutoExpandingTextView.Coordinator.init()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:520:53
+0.00ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:520:11	deinitializer VibeNotes.(file).AutoExpandingTextView.Coordinator.deinit@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:520:11
+9.84ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:593:10	instance method VibeNotes.(file).NSAttributedString extension.toMarkdown()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:593:10
+1.71ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:618:14	local function VibeNotes.(file).String extension.toMarkdownAttributedString().applyMarkdown(pattern:key:value:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:618:14
+5.33ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:614:10	instance method VibeNotes.(file).String extension.toMarkdownAttributedString()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:614:10
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:641:16	getter VibeNotes.(file).ViewHeightKey._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:641:16
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:641:16	setter VibeNotes.(file).ViewHeightKey._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:641:16
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:641:16	_modify accessor VibeNotes.(file).ViewHeightKey._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:641:16
+0.03ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:642:17	static method VibeNotes.(file).ViewHeightKey.reduce(value:nextValue:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:642:17
+0.00ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:640:8	initializer VibeNotes.(file).ViewHeightKey.init()@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:640:8
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:650:9	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:650:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:651:9	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:651:9
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	setter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	_modify accessor VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	setter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18	_modify accessor VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:652:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	setter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	_modify accessor VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	getter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	setter VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18	_modify accessor VibeNotes.(file).FolderDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:653:18
+5.82ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:655:10	instance method VibeNotes.(file).FolderDropDelegate.dropEntered(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:655:10
+0.12ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:668:10	instance method VibeNotes.(file).FolderDropDelegate.dropUpdated(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:668:10
+0.05ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:671:10	instance method VibeNotes.(file).FolderDropDelegate.dropExited(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:671:10
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:675:10	instance method VibeNotes.(file).FolderDropDelegate.performDrop(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:675:10
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:683:9	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:683:9
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:684:9	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:684:9
+0.02ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	setter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	_modify accessor VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	setter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18	_modify accessor VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:685:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	setter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	_modify accessor VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	getter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	setter VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+0.01ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18	_modify accessor VibeNotes.(file).NoteDropDelegate._@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:686:18
+14.54ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:688:10	instance method VibeNotes.(file).NoteDropDelegate.dropEntered(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:688:10
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:702:10	instance method VibeNotes.(file).NoteDropDelegate.dropUpdated(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:702:10
+0.06ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:705:10	instance method VibeNotes.(file).NoteDropDelegate.dropExited(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:705:10
+0.08ms	/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:709:10	instance method VibeNotes.(file).NoteDropDelegate.performDrop(info:)@/Users/sangeet/Github/VibeNotes/Sources/VibeNotes/ContentView.swift:709:10
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.frame(minWidth:idealWidth:maxWidth:minHeight:idealHeight:maxHeight:alignment:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.environmentObject
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.environment
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.clipShape(_:style:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.background(_:ignoresSafeAreaEdges:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.frame(width:height:alignment:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.padding
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.foregroundColor
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.font
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.background(_:alignment:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).Shape extension.fill(_:style:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.scaleEffect(_:anchor:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.scaleEffect(_:anchor:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.overlay(alignment:content:)
+0.00ms	<invalid loc>	instance method SwiftUICore.(file).View extension.offset(x:y:)
+0.00ms	<invalid loc>	instance method SwiftUICore.(file).View extension.offset
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.padding
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.overlay(_:alignment:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).Shape extension.stroke(_:lineWidth:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).Shape extension.stroke(style:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.cornerRadius(_:antialiased:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.contentShape(_:eoFill:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.rotationEffect(_:anchor:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.onChange(of:perform:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.onAppear(perform:)
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.lineLimit
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.transition
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension._trait
+0.01ms	<invalid loc>	instance method SwiftUICore.(file).View extension.allowsHitTesting
+0.01ms	<invalid loc>	getter AppKit.(file).NSView extension.AutoresizingMask._
+0.01ms	<invalid loc>	getter AppKit.(file).NSFontDescriptor extension.SymbolicTraits._
+0.02ms	<invalid loc>	getter AppKit.(file).NSUnderlineStyle._
+0.01ms	<invalid loc>	getter Foundation.(file).NSRegularExpression extension.Options._
+0.01ms	<invalid loc>	getter AppKit.(file).NSFontDescriptor extension.SymbolicTraits._
+0.01ms	<invalid loc>	getter Foundation.(file).NSNotification extension.Name._
+0.01ms	<invalid loc>	getter AppKit.(file).NSView extension.AutoresizingMask._
+0.01ms	<invalid loc>	getter Foundation.(file).NSAttributedString extension.Key._
+0.01ms	<invalid loc>	getter Foundation.(file).NSAttributedString extension.EnumerationOptions._
+0.01ms	<invalid loc>	getter Foundation.(file).NSRegularExpression extension.Options._
+0.01ms	<invalid loc>	getter Foundation.(file).NSRegularExpression extension.MatchingOptions._
+[8/11] Emitting module VibeNotes
+[8/10] Linking VibeNotes
+[9/10] Applying VibeNotes
+Build complete! (1.24s)

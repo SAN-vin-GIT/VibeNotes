@@ -467,18 +467,12 @@ struct AutoExpandingTextView: NSViewRepresentable {
         textView.drawsBackground = false
         textView.delegate = context.coordinator
         
-        // Setup bolding listener
         context.coordinator.setupNotifications(for: textView)
         
-        // Zero out ALL insets for absolute pixel control
         textView.font = .systemFont(ofSize: 14)
         textView.textContainerInset = NSSize(width: 0, height: 8)
-        textView.textContainer?.lineFragmentPadding = 0 // Remove the default 5px indent
-        
-        // Remove focus ring
+        textView.textContainer?.lineFragmentPadding = 0
         textView.focusRingType = .none
-        
-        // Disable internal scrolling
         textView.isVerticallyResizable = true
         textView.isHorizontallyResizable = false
         textView.autoresizingMask = [.width]
@@ -487,12 +481,24 @@ struct AutoExpandingTextView: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: NSTextView, context: Context) {
-        if nsView.string != text {
-            nsView.string = text
-        }
+        if context.coordinator.isUpdating { return }
         
-        // Apply styles
-        context.coordinator.applyStyles(to: nsView)
+        let currentMarkdown = nsView.attributedString().toMarkdown()
+        if currentMarkdown != text {
+            context.coordinator.isUpdating = true
+            let attrStr = text.toMarkdownAttributedString()
+            
+            // Preserve selection
+            let selectedRanges = nsView.selectedRanges
+            nsView.textStorage?.setAttributedString(attrStr)
+            
+            // Restore selection if bounds allow
+            if let firstRange = selectedRanges.first as? NSRange, 
+               firstRange.location + firstRange.length <= attrStr.length {
+                nsView.selectedRanges = selectedRanges
+            }
+            context.coordinator.isUpdating = false
+        }
         
         // Update height based on content
         if let layoutManager = nsView.layoutManager, let container = nsView.textContainer {
@@ -514,6 +520,7 @@ struct AutoExpandingTextView: NSViewRepresentable {
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: AutoExpandingTextView
         private var cancellables = Set<AnyCancellable>()
+        var isUpdating = false
         
         init(_ parent: AutoExpandingTextView) {
             self.parent = parent
@@ -522,129 +529,111 @@ struct AutoExpandingTextView: NSViewRepresentable {
         func setupNotifications(for textView: NSTextView) {
             NotificationCenter.default.publisher(for: Notification.Name("BoldSelectedText"))
                 .sink { [weak self, weak textView] notification in
-                    guard let self = self, let textView = textView else { return }
-                    guard let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
-                    self.toggleFormatting(in: textView, startToken: "**", endToken: "**")
+                    guard let self = self, let textView = textView, let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleTrait(in: textView, trait: .bold)
                 }
                 .store(in: &cancellables)
                 
             NotificationCenter.default.publisher(for: Notification.Name("UnderlineSelectedText"))
                 .sink { [weak self, weak textView] notification in
-                    guard let self = self, let textView = textView else { return }
-                    guard let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
-                    self.toggleFormatting(in: textView, startToken: "__", endToken: "__")
+                    guard let self = self, let textView = textView, let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleAttribute(in: textView, key: .underlineStyle, value: NSUnderlineStyle.single.rawValue)
                 }
                 .store(in: &cancellables)
                 
             NotificationCenter.default.publisher(for: Notification.Name("StrikethroughSelectedText"))
                 .sink { [weak self, weak textView] notification in
-                    guard let self = self, let textView = textView else { return }
-                    guard let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
-                    self.toggleFormatting(in: textView, startToken: "~~", endToken: "~~")
+                    guard let self = self, let textView = textView, let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleAttribute(in: textView, key: .strikethroughStyle, value: NSUnderlineStyle.single.rawValue)
                 }
                 .store(in: &cancellables)
         }
         
-        private func toggleFormatting(in textView: NSTextView, startToken: String, endToken: String) {
+        private func toggleTrait(in textView: NSTextView, trait: NSFontDescriptor.SymbolicTraits) {
             let range = textView.selectedRange()
-            let fullText = textView.string
-            let nsString = (fullText as NSString)
-            let tokenLen = startToken.count
+            guard range.length > 0, let storage = textView.textStorage else { return }
             
-            // Check if already formatted
-            var isFormatted = false
-            if range.location >= tokenLen && range.location + range.length <= nsString.length - tokenLen {
-                let startPrefix = nsString.substring(with: NSRange(location: range.location - tokenLen, length: tokenLen))
-                let endSuffix = nsString.substring(with: NSRange(location: range.location + range.length, length: tokenLen))
-                isFormatted = (startPrefix == startToken && endSuffix == endToken)
-            }
+            let currentFont = storage.attribute(.font, at: range.location, effectiveRange: nil) as? NSFont
+            let hasTrait = currentFont?.fontDescriptor.symbolicTraits.contains(trait) == true
             
-            if isFormatted {
-                // Remove tokens
-                let unformattedRange = NSRange(location: range.location - tokenLen, length: range.length + tokenLen * 2)
-                let selectedText = nsString.substring(with: range)
-                if textView.shouldChangeText(in: unformattedRange, replacementString: selectedText) {
-                    textView.replaceCharacters(in: unformattedRange, with: selectedText)
-                    textView.didChangeText()
-                    textView.setSelectedRange(NSRange(location: range.location - tokenLen, length: range.length))
+            storage.enumerateAttribute(.font, in: range, options: []) { value, subrange, _ in
+                var newFont = NSFont.systemFont(ofSize: 14)
+                if !hasTrait {
+                    newFont = NSFont.boldSystemFont(ofSize: 14)
                 }
+                storage.addAttribute(.font, value: newFont, range: subrange)
+            }
+            textView.didChangeText()
+        }
+        
+        private func toggleAttribute(in textView: NSTextView, key: NSAttributedString.Key, value: Any) {
+            let range = textView.selectedRange()
+            guard range.length > 0, let storage = textView.textStorage else { return }
+            
+            let hasAttr = storage.attribute(key, at: range.location, effectiveRange: nil) != nil
+            
+            if hasAttr {
+                storage.removeAttribute(key, range: range)
             } else {
-                // Add tokens
-                let selectedText = nsString.substring(with: range)
-                let newText = "\(startToken)\(selectedText)\(endToken)"
-                if textView.shouldChangeText(in: range, replacementString: newText) {
-                    textView.replaceCharacters(in: range, with: newText)
-                    textView.didChangeText()
-                    textView.setSelectedRange(NSRange(location: range.location + tokenLen, length: range.length))
-                }
+                storage.addAttribute(key, value: value, range: range)
             }
-            
-            applyStyles(to: textView)
-        }
-        
-        func applyStyles(to textView: NSTextView) {
-            guard let storage = textView.textStorage else { return }
-            let fullRange = NSRange(location: 0, length: storage.length)
-            
-            // 1. Reset everything to standard font
-            let normalFont = NSFont.systemFont(ofSize: 14)
-            storage.addAttribute(.font, value: normalFont, range: fullRange)
-            storage.addAttribute(.foregroundColor, value: NSColor.labelColor, range: fullRange)
-            storage.addAttribute(.kern, value: 0.0, range: fullRange) // Reset kerning
-
-            let selectedRange = textView.selectedRange()
-            
-            // Helper to apply regex and styles
-            func applyFormat(pattern: String, styleBlock: (NSRange) -> Void) {
-                if let regex = try? NSRegularExpression(pattern: pattern, options: []) {
-                    let matches = regex.matches(in: textView.string, options: [], range: fullRange)
-                    for match in matches {
-                        let innerRange = match.range(at: 1)
-                        let startTokenRange = NSRange(location: match.range.location, length: 2)
-                        let endTokenRange = NSRange(location: match.range.location + match.range.length - 2, length: 2)
-                        
-                        styleBlock(innerRange)
-                        
-                        let cursorInside = (selectedRange.location >= match.range.location && selectedRange.location <= match.range.location + match.range.length)
-                        
-                        if cursorInside {
-                            storage.addAttribute(.foregroundColor, value: NSColor.secondaryLabelColor.withAlphaComponent(0.5), range: startTokenRange)
-                            storage.addAttribute(.foregroundColor, value: NSColor.secondaryLabelColor.withAlphaComponent(0.5), range: endTokenRange)
-                        } else {
-                            storage.addAttribute(.foregroundColor, value: NSColor.clear, range: startTokenRange)
-                            storage.addAttribute(.foregroundColor, value: NSColor.clear, range: endTokenRange)
-                            storage.addAttribute(.font, value: NSFont.systemFont(ofSize: 0.01), range: startTokenRange)
-                            storage.addAttribute(.font, value: NSFont.systemFont(ofSize: 0.01), range: endTokenRange)
-                            storage.addAttribute(.kern, value: -8.0, range: startTokenRange)
-                            storage.addAttribute(.kern, value: -8.0, range: endTokenRange)
-                        }
-                    }
-                }
-            }
-            
-            applyFormat(pattern: "\\*\\*(.*?)\\*\\*") { range in
-                storage.addAttribute(.font, value: NSFont.boldSystemFont(ofSize: 14), range: range)
-            }
-            
-            applyFormat(pattern: "__(.*?)__") { range in
-                storage.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
-            }
-            
-            applyFormat(pattern: "~~(.*?)~~") { range in
-                storage.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
-            }
-        }
-        
-        func textViewDidChangeSelection(_ notification: Notification) {
-            guard let textView = notification.object as? NSTextView else { return }
-            applyStyles(to: textView)
+            textView.didChangeText()
         }
         
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
-            self.parent.text = textView.string
-            applyStyles(to: textView)
+            isUpdating = true
+            self.parent.text = textView.attributedString().toMarkdown()
+            isUpdating = false
         }
+    }
+}
+
+extension NSAttributedString {
+    func toMarkdown() -> String {
+        var result = ""
+        self.enumerateAttributes(in: NSRange(location: 0, length: self.length), options: []) { attrs, range, _ in
+            var textSegment = (self.string as NSString).substring(with: range)
+            
+            let isBold = (attrs[.font] as? NSFont)?.fontDescriptor.symbolicTraits.contains(.bold) == true
+            let isUnderline = attrs[.underlineStyle] != nil
+            let isStrikethrough = attrs[.strikethroughStyle] != nil
+            
+            if isStrikethrough { textSegment = "~~" + textSegment + "~~" }
+            if isUnderline { textSegment = "__" + textSegment + "__" }
+            if isBold { textSegment = "**" + textSegment + "**" }
+            
+            result += textSegment
+        }
+        
+        return result
+    }
+}
+
+extension String {
+    func toMarkdownAttributedString() -> NSMutableAttributedString {
+        let normalFont = NSFont.systemFont(ofSize: 14)
+        let attrString = NSMutableAttributedString(string: self, attributes: [.font: normalFont, .foregroundColor: NSColor.labelColor])
+
+        func applyMarkdown(pattern: String, key: NSAttributedString.Key, value: Any) {
+            while let regex = try? NSRegularExpression(pattern: pattern, options: [.dotMatchesLineSeparators]),
+                  let match = regex.firstMatch(in: attrString.string, options: [], range: NSRange(location: 0, length: attrString.length)) {
+                
+                let innerRange = match.range(at: 1)
+                let innerText = attrString.attributedSubstring(from: innerRange)
+                
+                let replacement = NSMutableAttributedString(attributedString: innerText)
+                replacement.addAttribute(key, value: value, range: NSRange(location: 0, length: replacement.length))
+                
+                attrString.replaceCharacters(in: match.range, with: replacement)
+            }
+        }
+        
+        applyMarkdown(pattern: "\\*\\*(.*?)\\*\\*", key: .font, value: NSFont.boldSystemFont(ofSize: 14))
+        applyMarkdown(pattern: "__(.*?)__", key: .underlineStyle, value: NSUnderlineStyle.single.rawValue)
+        applyMarkdown(pattern: "~~(.*?)~~", key: .strikethroughStyle, value: NSUnderlineStyle.single.rawValue)
+        
+        return attrString
     }
 }
 
