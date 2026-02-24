@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import UniformTypeIdentifiers
 
 struct ContentView: View {
     @EnvironmentObject var store: NoteStore
@@ -38,7 +39,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(.plain)
             }
-            .frame(width: 60)
+            .frame(width: 56)
             .background(.regularMaterial)
             .background(Color.white.opacity(0.15))
             
@@ -148,10 +149,14 @@ struct FolderListView: View {
     @Binding var itemToDelete: ContentView.DeletableItem?
     @Binding var showDeleteConfirmation: Bool
     
+    @State private var draggedFolder: Folder?
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) { // Stealth Scroll
             VStack(alignment: .center, spacing: 14) { // Slightly more spacing for initials
                 ForEach(store.folders) { folder in
+                    @State var isTargeted = false
+                    
                     Button(action: { 
                         withAnimation(.easeOut(duration: 0.15)) {
                             store.selectFolder(folder.id) 
@@ -167,6 +172,7 @@ struct FolderListView: View {
                                     .clipShape(Circle())
                                     .offset(x: 4, y: 4)
                             }
+                            .scaleEffect(isTargeted ? 1.1 : 1.0)
                     }
                     .buttonStyle(.plain)
                     .contextMenu {
@@ -177,6 +183,11 @@ struct FolderListView: View {
                             Label("Delete", systemImage: "trash")
                         }
                     }
+                    .onDrag {
+                        self.draggedFolder = folder
+                        return NSItemProvider(object: folder.id.uuidString as NSString)
+                    }
+                    .onDrop(of: [.plainText], delegate: FolderDropDelegate(folder: folder, store: store, draggedFolder: $draggedFolder, isTargeted: $isTargeted))
                 }
                 
                 Button(action: { store.addFolder(name: "New Folder") }) {
@@ -226,6 +237,8 @@ struct NoteListView: View {
     @Binding var itemToDelete: ContentView.DeletableItem?
     @Binding var showDeleteConfirmation: Bool
     
+    @State private var draggedNote: Note?
+    
     var filteredNoteList: [Note] {
         let searchText = store.searchText
         let selectedFolderId = store.selectedFolderId
@@ -248,7 +261,23 @@ struct NoteListView: View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(filteredNoteList) { note in
+                    @State var isTargeted = false
+                    
                     NoteRowView(note: note, itemToDelete: $itemToDelete, showDeleteConfirmation: $showDeleteConfirmation)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(isTargeted ? Color.accentColor.opacity(0.15) : Color.clear)
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(isTargeted ? Color.accentColor : Color.clear, lineWidth: 2)
+                        )
+                        .padding(.horizontal, 8)
+                        .onDrag {
+                            self.draggedNote = note
+                            return NSItemProvider(object: note.id.uuidString as NSString)
+                        }
+                        .onDrop(of: [.plainText], delegate: NoteDropDelegate(note: note, store: store, draggedNote: $draggedNote, isTargeted: $isTargeted))
                 }
             }
         }
@@ -569,5 +598,78 @@ struct ViewHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
+    }
+}
+
+// MARK: - Drag and Drop Delegates
+
+struct FolderDropDelegate: DropDelegate {
+    let folder: Folder
+    let store: NoteStore
+    @Binding var draggedFolder: Folder?
+    @Binding var isTargeted: Bool
+    
+    func dropEntered(info: DropInfo) {
+        if draggedFolder?.id != folder.id {
+            isTargeted = true
+        }
+        guard let dragged = draggedFolder, dragged.id != folder.id else { return }
+        guard let from = store.folders.firstIndex(where: { $0.id == dragged.id }),
+              let to = store.folders.firstIndex(where: { $0.id == folder.id }) else { return }
+              
+        if from != to {
+            withAnimation(.easeOut(duration: 0.15)) {
+                store.moveFolder(draggedId: dragged.id, targetId: folder.id)
+            }
+        }
+    }
+    
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        return DropProposal(operation: .move)
+    }
+    func dropExited(info: DropInfo) {
+        isTargeted = false
+    }
+    
+    func performDrop(info: DropInfo) -> Bool {
+        draggedFolder = nil
+        isTargeted = false
+        return true
+    }
+}
+
+struct NoteDropDelegate: DropDelegate {
+    let note: Note
+    let store: NoteStore
+    @Binding var draggedNote: Note?
+    @Binding var isTargeted: Bool
+
+    func dropEntered(info: DropInfo) {
+        if draggedNote?.id != note.id {
+            isTargeted = true
+        }
+        guard let dragged = draggedNote, dragged.id != note.id else { return }
+        let folderNotes = store.notes.filter { $0.folderId == store.selectedFolderId }
+        guard let from = folderNotes.firstIndex(where: { $0.id == dragged.id }),
+              let to = folderNotes.firstIndex(where: { $0.id == note.id }) else { return }
+              
+        if from != to {
+            withAnimation(.easeOut(duration: 0.15)) {
+                store.moveNote(draggedId: dragged.id, targetId: note.id)
+            }
+        }
+    }
+    
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        return DropProposal(operation: .move)
+    }
+    func dropExited(info: DropInfo) {
+        isTargeted = false
+    }
+    
+    func performDrop(info: DropInfo) -> Bool {
+        draggedNote = nil
+        isTargeted = false
+        return true
     }
 }

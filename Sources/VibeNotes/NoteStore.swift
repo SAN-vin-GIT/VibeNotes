@@ -108,6 +108,39 @@ class NoteStore: ObservableObject {
         }
     }
 
+    func moveFolder(draggedId: UUID, targetId: UUID) {
+        guard let fromIndex = folders.firstIndex(where: { $0.id == draggedId }),
+              let toIndex = folders.firstIndex(where: { $0.id == targetId }),
+              fromIndex != toIndex else { return }
+        
+        let folder = folders.remove(at: fromIndex)
+        if let newToIndex = folders.firstIndex(where: { $0.id == targetId }) {
+            let insertIndex = fromIndex < toIndex ? newToIndex + 1 : newToIndex
+            folders.insert(folder, at: insertIndex)
+        }
+        save()
+    }
+    
+    func moveNote(draggedId: UUID, targetId: UUID) {
+        guard let fromIndex = notes.firstIndex(where: { $0.id == draggedId }),
+              let toIndex = notes.firstIndex(where: { $0.id == targetId }),
+              fromIndex != toIndex else { return }
+        
+        guard let folderId = notes[fromIndex].folderId else { return }
+        let folderNotes = notes.filter { $0.folderId == folderId }
+        guard let visibleFrom = folderNotes.firstIndex(where: { $0.id == draggedId }),
+              let visibleTo = folderNotes.firstIndex(where: { $0.id == targetId }) else { return }
+              
+        let note = notes.remove(at: fromIndex)
+        if let newToIndex = notes.firstIndex(where: { $0.id == targetId }) {
+            let insertIndex = visibleFrom < visibleTo ? newToIndex + 1 : newToIndex
+            notes.insert(note, at: insertIndex)
+        } else {
+            notes.append(note)
+        }
+        save()
+    }
+
     func scheduleSave() {
         saveSubject.send()
     }

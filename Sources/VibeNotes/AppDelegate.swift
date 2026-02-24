@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private var isExpanded = true
     private var isCompactHeight = false
-    private let panelWidth: CGFloat = 320
+    private let panelWidth: CGFloat = 390
     private let handleWidth: CGFloat = 8
     
     func applicationDidFinishLaunching(_ notification: Notification) {
