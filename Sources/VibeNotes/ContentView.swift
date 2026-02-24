@@ -99,13 +99,27 @@ struct ContentView: View {
                 // Branding Pill
                 HStack {
                     Spacer()
-                    Text("Made by Sangeet")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(.secondary)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 6)
-                        .background(Capsule().fill(Color.primary.opacity(0.08)))
-                        .padding(.bottom, 20)
+                    Button(action: {
+                        if let url = URL(string: "https://www.sangeetghimire.com/") {
+                            NSWorkspace.shared.open(url)
+                        }
+                    }) {
+                        Text("Made by Sangeet")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 6)
+                            .background(Capsule().fill(Color.primary.opacity(0.08)))
+                    }
+                    .buttonStyle(.plain)
+                    .onHover { hovering in
+                        if hovering {
+                            NSCursor.pointingHand.push()
+                        } else {
+                            NSCursor.pop()
+                        }
+                    }
+                    .padding(.bottom, 20)
                     Spacer()
                 }
             }
@@ -458,9 +472,7 @@ struct AutoExpandingTextView: NSViewRepresentable {
     let noteId: UUID
     
     func makeNSView(context: Context) -> NSTextView {
-        // Use a subclassed NSTextView that returns its own private undo manager
-        // so each note's undo history is fully isolated and cannot crash on note switch
-        let textView = UndoIsolatedTextView(privateUndoManager: context.coordinator.privateUndoManager)
+        let textView = NSTextView()
         textView.isRichText = false
         textView.isEditable = true
         textView.isSelectable = true
@@ -483,21 +495,20 @@ struct AutoExpandingTextView: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: NSTextView, context: Context) {
-        if context.coordinator.isUpdating { return }
+        let coordinator = context.coordinator
         
-        let currentMarkdown = nsView.attributedString().toMarkdown()
-        if currentMarkdown != text {
-            context.coordinator.isUpdating = true
+        // Only reload text storage when switching to a DIFFERENT note.
+        // For same-note edits, NSTextView already has the correct content
+        // and we must not touch the text storage or we'll wipe the undo stack.
+        if coordinator.lastNoteId != noteId {
+            coordinator.lastNoteId = noteId
+            
             let attrStr = text.toMarkdownAttributedString()
-            
-            // Clear undo history when switching to a different note to prevent
-            // a crash where the undo manager tries to replay actions on a stale context
-            nsView.undoManager?.removeAllActions()
-            
             nsView.textStorage?.setAttributedString(attrStr)
-            // Move cursor to start on note switch (selection no longer valid)
             nsView.setSelectedRange(NSRange(location: 0, length: 0))
-            context.coordinator.isUpdating = false
+            
+            // Clear undo from the previous note so Cmd+Z doesn't replay stale actions
+            nsView.undoManager?.removeAllActions()
         }
         
         // Update height based on content
@@ -520,7 +531,9 @@ struct AutoExpandingTextView: NSViewRepresentable {
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: AutoExpandingTextView
         private var cancellables = Set<AnyCancellable>()
-        var isUpdating = false
+        
+        // Track which note is currently loaded so we only replace text on actual note switches
+        var lastNoteId: UUID?
         
         // Each note editor instance gets its own private undo manager — completely
         // isolated from the window's shared undo manager to prevent cross-note crashes.
@@ -586,9 +599,14 @@ struct AutoExpandingTextView: NSViewRepresentable {
         
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
-            isUpdating = true
             self.parent.text = textView.attributedString().toMarkdown()
-            isUpdating = false
+        }
+        
+        // This is the canonical way to provide a private undo manager to NSTextView.
+        // NSTextView calls this delegate method (NOT the undoManager property) to get
+        // the undo manager it should register all text editing operations with.
+        func undoManager(for view: NSTextView) -> UndoManager? {
+            return privateUndoManager
         }
     }
 }
@@ -641,32 +659,6 @@ extension String {
     }
 }
 
-/// NSTextView subclass whose `undoManager` returns a dedicated private instance.
-/// This fully isolates each note's undo stack from the window's shared undo manager,
-/// preventing crashes when switching notes and pressing Cmd+Z.
-class UndoIsolatedTextView: NSTextView {
-    private let _privateUndoManager: UndoManager
-    
-    init(privateUndoManager: UndoManager) {
-        self._privateUndoManager = privateUndoManager
-        
-        // Manually build the full text system so NSTextView is properly functional
-        let textStorage = NSTextStorage()
-        let layoutManager = NSLayoutManager()
-        textStorage.addLayoutManager(layoutManager)
-        let textContainer = NSTextContainer(containerSize: NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude))
-        textContainer.widthTracksTextView = true
-        layoutManager.addTextContainer(textContainer)
-        
-        super.init(frame: .zero, textContainer: textContainer)
-    }
-    
-    required init?(coder: NSCoder) { fatalError() }
-    
-    override var undoManager: UndoManager? {
-        return _privateUndoManager
-    }
-}
 
 struct ViewHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
