@@ -38,6 +38,8 @@ Vibe Notes stores all your notes and folders entirely locally on your machine in
 2. Press `Cmd + Shift + G` to open the "Go to Folder" prompt.
 3. Paste `~/Library/Application Support/VibeNotes/` and press Enter.
 
+> **Note:** The `Library` folder is hidden by default in macOS. You won't see it in Finder unless you use the "Go to Folder" shortcut above, or press `Cmd + Shift + .` in Finder to temporarily reveal hidden files.
+
 To back up your notes, simply copy the `data.json` file. To restore them later, just paste your backup file into that exact same folder before opening the app!
 
 ## Development Setup
