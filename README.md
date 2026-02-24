@@ -9,9 +9,13 @@ Inspired by popular "side-drawer" apps, Vibe Notes lives discreetly on the edge 
 - **Blazing Fast Animations**: Tuned for 0.15s spring animations – the drawer slides in and folders expand with zero lag.
 - **Smart Drawer Sizing**: A dedicated toolbar button toggles the app between a Full-Height mode and a centered, focused Half-Height mode.
 - **Universal Trigger**: A sleek, dark, pill-shaped handle (14pt wide, 10pt radius) with a minimalist `|` icon sits on the edge of the screen, providing perfect contrast against any background.
+- **Rich Text Formatting**: WYSIWYG **Bold**, __Underline__, and ~~Strikethrough~~ formatting with toolbar buttons. Markdown tags are completely hidden — what you see is what you get.
+- **Undo & Redo**: Full `Cmd+Z` / `Cmd+Shift+Z` support with per-note isolated undo history. Switching notes never corrupts your undo stack.
+- **Drag & Drop Reordering**: Reorder both folders and notes with smooth, responsive drag-and-drop. Custom lightweight drag previews for instant visual feedback.
+- **Space-Transition Safe**: The drawer stays perfectly in place during macOS three-finger Space swipes — no flickering or ghost appearances.
 - **Data Persistence**: Uses a local JSON datastore (`data.json`) that saves automatically in the background (debounced by 2 seconds) to minimize CPU and disk usage. Notes are safely stored in `~/Library/Application Support/VibeNotes/`.
 - **Premium Aesthetics**: Features a subtle white-glow sidebar (`ultraThickMaterial`), a clean note editor (`ultraThinMaterial`), seamless rounded application corners (20pt radius), and a seamless single-scrollbar experience.
-- **Safety**: Includes a protected "Power" button to exit the application with a confirmation dialogue, preventing accidental closure. 
+- **Safety**: Includes a protected "Power" button to exit the application with a confirmation dialogue, preventing accidental closure.
 
 ## Technology Stack
 
