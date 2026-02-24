@@ -116,7 +116,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.backgroundColor = .clear
         window.isOpaque = false
         window.ignoresMouseEvents = false
-        window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary]
         
         let triggerView = TriggerButtonView { [weak self] in
             guard let self = self else { return }
@@ -161,6 +161,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var handleFrame = handleWindow?.frame ?? .zero
         handleFrame.origin.x = handleTargetX
         
+        // When expanding, make visible immediately before animation starts
+        if expand {
+            panel.alphaValue = 1
+        }
+        
         NSAnimationContext.runAnimationGroup { context in
             context.duration = 0.15
             context.timingFunction = CAMediaTimingFunction(name: .easeOut)
@@ -169,6 +174,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             handleWindow?.animator().setFrame(handleFrame, display: true)
         } completionHandler: {
             self.isExpanded = expand
+            // When collapsed, make fully transparent so macOS can't flash it during Space transitions
+            if !expand {
+                panel.alphaValue = 0
+            }
         }
     }
 }
