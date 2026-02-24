@@ -458,7 +458,9 @@ struct AutoExpandingTextView: NSViewRepresentable {
     let noteId: UUID
     
     func makeNSView(context: Context) -> NSTextView {
-        let textView = NSTextView()
+        // Use a subclassed NSTextView that returns its own private undo manager
+        // so each note's undo history is fully isolated and cannot crash on note switch
+        let textView = UndoIsolatedTextView(privateUndoManager: context.coordinator.privateUndoManager)
         textView.isRichText = false
         textView.isEditable = true
         textView.isSelectable = true
@@ -519,6 +521,10 @@ struct AutoExpandingTextView: NSViewRepresentable {
         var parent: AutoExpandingTextView
         private var cancellables = Set<AnyCancellable>()
         var isUpdating = false
+        
+        // Each note editor instance gets its own private undo manager — completely
+        // isolated from the window's shared undo manager to prevent cross-note crashes.
+        let privateUndoManager = UndoManager()
         
         init(_ parent: AutoExpandingTextView) {
             self.parent = parent
@@ -632,6 +638,24 @@ extension String {
         applyMarkdown(pattern: "~~(.*?)~~", key: .strikethroughStyle, value: NSUnderlineStyle.single.rawValue)
         
         return attrString
+    }
+}
+
+/// NSTextView subclass whose `undoManager` returns a dedicated private instance.
+/// This fully isolates each note's undo stack from the window's shared undo manager,
+/// preventing crashes when switching notes and pressing Cmd+Z.
+class UndoIsolatedTextView: NSTextView {
+    private let _privateUndoManager: UndoManager
+    
+    init(privateUndoManager: UndoManager) {
+        self._privateUndoManager = privateUndoManager
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) { fatalError() }
+    
+    override var undoManager: UndoManager? {
+        return _privateUndoManager
     }
 }
 
