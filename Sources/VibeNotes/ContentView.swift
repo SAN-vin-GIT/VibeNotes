@@ -649,7 +649,16 @@ class UndoIsolatedTextView: NSTextView {
     
     init(privateUndoManager: UndoManager) {
         self._privateUndoManager = privateUndoManager
-        super.init(frame: .zero, textContainer: nil)
+        
+        // Manually build the full text system so NSTextView is properly functional
+        let textStorage = NSTextStorage()
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+        let textContainer = NSTextContainer(containerSize: NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude))
+        textContainer.widthTracksTextView = true
+        layoutManager.addTextContainer(textContainer)
+        
+        super.init(frame: .zero, textContainer: textContainer)
     }
     
     required init?(coder: NSCoder) { fatalError() }
