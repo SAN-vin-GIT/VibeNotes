@@ -186,6 +186,8 @@ struct FolderListView: View {
                     .onDrag {
                         self.draggedFolder = folder
                         return NSItemProvider(object: folder.id.uuidString as NSString)
+                    } preview: {
+                        FolderIconView(name: folder.name, isSelected: true)
                     }
                     .onDrop(of: [.plainText], delegate: FolderDropDelegate(folder: folder, store: store, draggedFolder: $draggedFolder, isTargeted: $isTargeted))
                 }
