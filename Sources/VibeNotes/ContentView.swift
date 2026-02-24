@@ -488,15 +488,13 @@ struct AutoExpandingTextView: NSViewRepresentable {
             context.coordinator.isUpdating = true
             let attrStr = text.toMarkdownAttributedString()
             
-            // Preserve selection
-            let selectedRanges = nsView.selectedRanges
-            nsView.textStorage?.setAttributedString(attrStr)
+            // Clear undo history when switching to a different note to prevent
+            // a crash where the undo manager tries to replay actions on a stale context
+            nsView.undoManager?.removeAllActions()
             
-            // Restore selection if bounds allow
-            if let firstRange = selectedRanges.first as? NSRange, 
-               firstRange.location + firstRange.length <= attrStr.length {
-                nsView.selectedRanges = selectedRanges
-            }
+            nsView.textStorage?.setAttributedString(attrStr)
+            // Move cursor to start on note switch (selection no longer valid)
+            nsView.setSelectedRange(NSRange(location: 0, length: 0))
             context.coordinator.isUpdating = false
         }
         
