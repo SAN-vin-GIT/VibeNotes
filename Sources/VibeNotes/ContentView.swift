@@ -260,7 +260,7 @@ struct NoteListView: View {
     }
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVStack(spacing: 0) {
                 ForEach(filteredNoteList) { note in
                     @State var isTargeted = false
@@ -334,6 +334,7 @@ struct NoteRowView: View {
                         Text(note.title.isEmpty ? "Untitled Note" : note.title)
                             .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.primary)
+                            .lineLimit(1)
                     }
                     Spacer()
                 }
