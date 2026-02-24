@@ -276,6 +276,14 @@ struct NoteListView: View {
                         .onDrag {
                             self.draggedNote = note
                             return NSItemProvider(object: note.id.uuidString as NSString)
+                        } preview: {
+                            Text(note.title.isEmpty ? "Untitled Note" : note.title)
+                                .font(.system(size: 14, weight: .bold))
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(Color.accentColor.opacity(0.8))
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
                         }
                         .onDrop(of: [.plainText], delegate: NoteDropDelegate(note: note, store: store, draggedNote: $draggedNote, isTargeted: $isTargeted))
                 }
@@ -300,7 +308,41 @@ struct NoteRowView: View {
     var body: some View {
         VStack(spacing: 0) {
             // Note Title (Clickable Header)
-            Button(action: {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Image(systemName: "chevron.down")
+                        .font(.system(size: 10, weight: .bold))
+                        .rotationEffect(.degrees(isExpanded ? 0 : -90))
+                        .foregroundColor(.secondary)
+                    
+                    if isEditingTitle, let index = store.notes.firstIndex(where: { $0.id == note.id }) {
+                        TextField("Note Title", text: $store.notes[index].title, onCommit: {
+                            isEditingTitle = false
+                        })
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 16, weight: .bold))
+                        .focused($isTitleFocused)
+                        .onAppear { isTitleFocused = true }
+                        .onChange(of: isTitleFocused) { focused in
+                            if !focused {
+                                isEditingTitle = false
+                            }
+                        }
+                    } else {
+                        Text(note.title.isEmpty ? "Untitled Note" : note.title)
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.primary)
+                    }
+                    Spacer()
+                }
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal)
+            .contentShape(Rectangle())
+            .onTapGesture(count: 2) {
+                isEditingTitle = true
+            }
+            .onTapGesture(count: 1) {
                 withAnimation(.easeOut(duration: 0.15)) {
                     if isExpanded {
                         store.selectNote(nil)
@@ -308,43 +350,7 @@ struct NoteRowView: View {
                         store.selectNote(note.id)
                     }
                 }
-            }) {
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Image(systemName: "chevron.down")
-                            .font(.system(size: 10, weight: .bold))
-                            .rotationEffect(.degrees(isExpanded ? 0 : -90))
-                            .foregroundColor(.secondary)
-                        
-                        if isEditingTitle, let index = store.notes.firstIndex(where: { $0.id == note.id }) {
-                            TextField("Note Title", text: $store.notes[index].title, onCommit: {
-                                isEditingTitle = false
-                            })
-                            .textFieldStyle(.plain)
-                            .font(.system(size: 16, weight: .bold))
-                            .focused($isTitleFocused)
-                            .onAppear { isTitleFocused = true }
-                            .onChange(of: isTitleFocused) { focused in
-                                if !focused {
-                                    isEditingTitle = false
-                                }
-                            }
-                        } else {
-                            Text(note.title.isEmpty ? "Untitled Note" : note.title)
-                                .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(.primary)
-                        }
-                        Spacer()
-                    }
-                }
-                .padding(.vertical, 12)
-                .padding(.horizontal)
-                .contentShape(Rectangle())
-                .onTapGesture(count: 2) {
-                    isEditingTitle = true
-                }
             }
-            .buttonStyle(.plain)
             
             if isExpanded, let index = store.notes.firstIndex(where: { $0.id == note.id }) {
                 VStack(spacing: 0) {
@@ -618,9 +624,7 @@ struct FolderDropDelegate: DropDelegate {
               let to = store.folders.firstIndex(where: { $0.id == folder.id }) else { return }
               
         if from != to {
-            withAnimation(.easeOut(duration: 0.15)) {
-                store.moveFolder(draggedId: dragged.id, targetId: folder.id)
-            }
+            store.moveFolder(draggedId: dragged.id, targetId: folder.id)
         }
     }
     
@@ -654,9 +658,7 @@ struct NoteDropDelegate: DropDelegate {
               let to = folderNotes.firstIndex(where: { $0.id == note.id }) else { return }
               
         if from != to {
-            withAnimation(.easeOut(duration: 0.15)) {
-                store.moveNote(draggedId: dragged.id, targetId: note.id)
-            }
+            store.moveNote(draggedId: dragged.id, targetId: note.id)
         }
     }
     
