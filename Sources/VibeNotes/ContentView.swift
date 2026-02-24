@@ -366,7 +366,21 @@ struct NoteRowView: View {
                             Button(action: {
                                 NotificationCenter.default.post(name: Notification.Name("BoldSelectedText"), object: note.id)
                             }) {
-                                Image(systemName: "textformat")
+                                Image(systemName: "bold")
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Button(action: {
+                                NotificationCenter.default.post(name: Notification.Name("UnderlineSelectedText"), object: note.id)
+                            }) {
+                                Image(systemName: "underline")
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Button(action: {
+                                NotificationCenter.default.post(name: Notification.Name("StrikethroughSelectedText"), object: note.id)
+                            }) {
+                                Image(systemName: "strikethrough")
                             }
                             .buttonStyle(.plain)
                             
@@ -499,54 +513,69 @@ struct AutoExpandingTextView: NSViewRepresentable {
     
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: AutoExpandingTextView
-        private var notificationCancellable: AnyCancellable?
+        private var cancellables = Set<AnyCancellable>()
         
         init(_ parent: AutoExpandingTextView) {
             self.parent = parent
         }
         
         func setupNotifications(for textView: NSTextView) {
-            notificationCancellable = NotificationCenter.default
-                .publisher(for: Notification.Name("BoldSelectedText"))
+            NotificationCenter.default.publisher(for: Notification.Name("BoldSelectedText"))
                 .sink { [weak self, weak textView] notification in
                     guard let self = self, let textView = textView else { return }
                     guard let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
-                    self.applyBold(to: textView)
+                    self.toggleFormatting(in: textView, startToken: "**", endToken: "**")
                 }
+                .store(in: &cancellables)
+                
+            NotificationCenter.default.publisher(for: Notification.Name("UnderlineSelectedText"))
+                .sink { [weak self, weak textView] notification in
+                    guard let self = self, let textView = textView else { return }
+                    guard let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleFormatting(in: textView, startToken: "__", endToken: "__")
+                }
+                .store(in: &cancellables)
+                
+            NotificationCenter.default.publisher(for: Notification.Name("StrikethroughSelectedText"))
+                .sink { [weak self, weak textView] notification in
+                    guard let self = self, let textView = textView else { return }
+                    guard let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleFormatting(in: textView, startToken: "~~", endToken: "~~")
+                }
+                .store(in: &cancellables)
         }
         
-        private func applyBold(to textView: NSTextView) {
+        private func toggleFormatting(in textView: NSTextView, startToken: String, endToken: String) {
             let range = textView.selectedRange()
             let fullText = textView.string
             let nsString = (fullText as NSString)
+            let tokenLen = startToken.count
             
-            // Check if already bolded (simplistic check for selection wrapped in **)
-            let isBolded: Bool
-            if range.location >= 2 && range.location + range.length <= nsString.length - 2 {
-                let startPrefix = nsString.substring(with: NSRange(location: range.location - 2, length: 2))
-                let endSuffix = nsString.substring(with: NSRange(location: range.location + range.length, length: 2))
-                isBolded = (startPrefix == "**" && endSuffix == "**")
-            } else {
-                isBolded = false
+            // Check if already formatted
+            var isFormatted = false
+            if range.location >= tokenLen && range.location + range.length <= nsString.length - tokenLen {
+                let startPrefix = nsString.substring(with: NSRange(location: range.location - tokenLen, length: tokenLen))
+                let endSuffix = nsString.substring(with: NSRange(location: range.location + range.length, length: tokenLen))
+                isFormatted = (startPrefix == startToken && endSuffix == endToken)
             }
             
-            if isBolded {
-                // Remove stars
-                let unboldedRange = NSRange(location: range.location - 2, length: range.length + 4)
+            if isFormatted {
+                // Remove tokens
+                let unformattedRange = NSRange(location: range.location - tokenLen, length: range.length + tokenLen * 2)
                 let selectedText = nsString.substring(with: range)
-                if textView.shouldChangeText(in: unboldedRange, replacementString: selectedText) {
-                    textView.replaceCharacters(in: unboldedRange, with: selectedText)
+                if textView.shouldChangeText(in: unformattedRange, replacementString: selectedText) {
+                    textView.replaceCharacters(in: unformattedRange, with: selectedText)
                     textView.didChangeText()
-                    textView.setSelectedRange(NSRange(location: range.location - 2, length: range.length))
+                    textView.setSelectedRange(NSRange(location: range.location - tokenLen, length: range.length))
                 }
             } else {
-                // Add stars
+                // Add tokens
                 let selectedText = nsString.substring(with: range)
-                let newText = "**\(selectedText)**"
+                let newText = "\(startToken)\(selectedText)\(endToken)"
                 if textView.shouldChangeText(in: range, replacementString: newText) {
                     textView.replaceCharacters(in: range, with: newText)
                     textView.didChangeText()
-                    textView.setSelectedRange(NSRange(location: range.location + 2, length: range.length))
+                    textView.setSelectedRange(NSRange(location: range.location + tokenLen, length: range.length))
                 }
             }
             
@@ -563,36 +592,52 @@ struct AutoExpandingTextView: NSViewRepresentable {
             storage.addAttribute(.foregroundColor, value: NSColor.labelColor, range: fullRange)
             storage.addAttribute(.kern, value: 0.0, range: fullRange) // Reset kerning
 
-            // 2. Bold the **text**
-            let pattern = "\\*\\*(.*?)\\*\\*"
-            if let regex = try? NSRegularExpression(pattern: pattern, options: []) {
-                let matches = regex.matches(in: textView.string, options: [], range: fullRange)
-                
-                for match in matches {
-                    let groupRange = match.range(at: 1)
-                    let startStarRange = NSRange(location: match.range.location, length: 2)
-                    let endStarRange = NSRange(location: match.range.location + match.range.length - 2, length: 2)
-                    
-                    // Make interior text bold
-                    storage.addAttribute(.font, value: NSFont.boldSystemFont(ofSize: 14), range: groupRange)
-                    
-                    // Always Hide stars: transparent, tiny font, and negative kerning to collapse space
-                    storage.addAttribute(.foregroundColor, value: NSColor.clear, range: startStarRange)
-                    storage.addAttribute(.foregroundColor, value: NSColor.clear, range: endStarRange)
-                    storage.addAttribute(.font, value: NSFont.systemFont(ofSize: 0.01), range: startStarRange)
-                    storage.addAttribute(.font, value: NSFont.systemFont(ofSize: 0.01), range: endStarRange)
-                    
-                    // Attempt to collapse the space occupied by the hidden characters
-                    // Note: Kern value is points of spacing after the character.
-                    storage.addAttribute(.kern, value: -8.0, range: startStarRange)
-                    storage.addAttribute(.kern, value: -8.0, range: endStarRange)
+            let selectedRange = textView.selectedRange()
+            
+            // Helper to apply regex and styles
+            func applyFormat(pattern: String, styleBlock: (NSRange) -> Void) {
+                if let regex = try? NSRegularExpression(pattern: pattern, options: []) {
+                    let matches = regex.matches(in: textView.string, options: [], range: fullRange)
+                    for match in matches {
+                        let innerRange = match.range(at: 1)
+                        let startTokenRange = NSRange(location: match.range.location, length: 2)
+                        let endTokenRange = NSRange(location: match.range.location + match.range.length - 2, length: 2)
+                        
+                        styleBlock(innerRange)
+                        
+                        let cursorInside = (selectedRange.location >= match.range.location && selectedRange.location <= match.range.location + match.range.length)
+                        
+                        if cursorInside {
+                            storage.addAttribute(.foregroundColor, value: NSColor.secondaryLabelColor.withAlphaComponent(0.5), range: startTokenRange)
+                            storage.addAttribute(.foregroundColor, value: NSColor.secondaryLabelColor.withAlphaComponent(0.5), range: endTokenRange)
+                        } else {
+                            storage.addAttribute(.foregroundColor, value: NSColor.clear, range: startTokenRange)
+                            storage.addAttribute(.foregroundColor, value: NSColor.clear, range: endTokenRange)
+                            storage.addAttribute(.font, value: NSFont.systemFont(ofSize: 0.01), range: startTokenRange)
+                            storage.addAttribute(.font, value: NSFont.systemFont(ofSize: 0.01), range: endTokenRange)
+                            storage.addAttribute(.kern, value: -8.0, range: startTokenRange)
+                            storage.addAttribute(.kern, value: -8.0, range: endTokenRange)
+                        }
+                    }
                 }
+            }
+            
+            applyFormat(pattern: "\\*\\*(.*?)\\*\\*") { range in
+                storage.addAttribute(.font, value: NSFont.boldSystemFont(ofSize: 14), range: range)
+            }
+            
+            applyFormat(pattern: "__(.*?)__") { range in
+                storage.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+            }
+            
+            applyFormat(pattern: "~~(.*?)~~") { range in
+                storage.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
             }
         }
         
         func textViewDidChangeSelection(_ notification: Notification) {
-            // Note: We don't need to re-apply styles on selection change anymore 
-            // if we are hiding them permanently.
+            guard let textView = notification.object as? NSTextView else { return }
+            applyStyles(to: textView)
         }
         
         func textDidChange(_ notification: Notification) {
