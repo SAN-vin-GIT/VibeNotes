@@ -20,6 +20,22 @@ Inspired by popular "side-drawer" apps, Vibe Notes lives discreetly on the edge 
 - **Architecture**: MVVM (Model-View-ViewModel) using Combine and `ObservableObject` for state management.
 - **Platform**: macOS 13.0+
 
+## Data Storage & Backups
+
+Vibe Notes stores all your notes and folders entirely locally on your machine in a plain JSON format. This means your data is fully under your control, privacy-respecting, and incredibly easy to back up, sync to a cloud drive (like iCloud/Dropbox), or migrate to another Mac!
+
+**Your notes are located at:**
+```bash
+~/Library/Application Support/VibeNotes/data.json
+```
+
+**How to open this folder:**
+1. Open Finder.
+2. Press `Cmd + Shift + G` to open the "Go to Folder" prompt.
+3. Paste `~/Library/Application Support/VibeNotes/` and press Enter.
+
+To back up your notes, simply copy the `data.json` file. To restore them later, just paste your backup file into that exact same folder before opening the app!
+
 ## Development Setup
 
 To build and run the application locally for development or testing:
@@ -41,7 +57,7 @@ If you lose your `VibeNotes.dmg` file, you can easily recreate it natively from 
 1. Open your Terminal program on macOS.
 2. Navigate to this project folder. For example:
    ```bash
-   cd /path/to/side-notes
+   cd /path/to/VibeNotes
    ```
 3. Run the following command to automatically generate the `.app` and package the `.dmg`:
    ```bash
