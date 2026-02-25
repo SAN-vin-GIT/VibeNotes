@@ -123,37 +123,94 @@ struct ContentView: View {
                     Spacer()
                 }
             }
-            .background(.ultraThinMaterial) // Thin blurred glass
+            .background(.thinMaterial) // Thin blurred glass
         }
-        .clipShape(RoundedRectangle(cornerRadius: 20)) // Smooth, rounded drawer corners
         .onTapGesture {
             // Force focus dismissal when clicking on empty areas
             NSApp.keyWindow?.makeFirstResponder(nil)
         }
         .environmentObject(store)
-        .confirmationDialog("Are you sure?", isPresented: $showDeleteConfirmation, titleVisibility: .visible) {
-            Button("Delete", role: .destructive) {
-                if let item = itemToDelete {
-                    switch item {
-                    case .note(let id):
-                        store.removeNote(id: id)
-                    case .folder(let id):
-                        store.removeFolder(id: id)
+        .overlay {
+            // Custom delete confirmation dialog with rounded overlay
+            if showDeleteConfirmation {
+                ZStack {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture { showDeleteConfirmation = false }
+                    
+                    VStack(spacing: 16) {
+                        Text("Are you sure?")
+                            .font(.headline)
+                        Text("This action cannot be undone.")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        
+                        HStack(spacing: 12) {
+                            Button("Cancel") {
+                                showDeleteConfirmation = false
+                            }
+                            .buttonStyle(.bordered)
+                            .keyboardShortcut(.cancelAction)
+                            
+                            Button("Delete") {
+                                if let item = itemToDelete {
+                                    switch item {
+                                    case .note(let id):
+                                        store.removeNote(id: id)
+                                    case .folder(let id):
+                                        store.removeFolder(id: id)
+                                    }
+                                }
+                                showDeleteConfirmation = false
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.red)
+                            .keyboardShortcut(.defaultAction)
+                        }
                     }
+                    .padding(24)
+                    .background(RoundedRectangle(cornerRadius: 14).fill(.ultraThickMaterial))
+                    .shadow(color: .black.opacity(0.3), radius: 20)
                 }
             }
-            Button("Cancel", role: .cancel) {}
-        } message: {
-            Text("This action cannot be undone.")
         }
-        .confirmationDialog("Quit Application?", isPresented: $showQuitConfirmation, titleVisibility: .visible) {
-            Button("Quit", role: .destructive) {
-                NSApplication.shared.terminate(nil)
+        .overlay {
+            // Custom quit confirmation dialog with rounded overlay
+            if showQuitConfirmation {
+                ZStack {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture { showQuitConfirmation = false }
+                    
+                    VStack(spacing: 16) {
+                        Text("Quit Application?")
+                            .font(.headline)
+                        Text("Are you sure you want to exit Vibe Notes?")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        
+                        HStack(spacing: 12) {
+                            Button("Cancel") {
+                                showQuitConfirmation = false
+                            }
+                            .buttonStyle(.bordered)
+                            .keyboardShortcut(.cancelAction)
+                            
+                            Button("Quit") {
+                                NSApplication.shared.terminate(nil)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.red)
+                            .keyboardShortcut(.defaultAction)
+                        }
+                    }
+                    .padding(24)
+                    .background(RoundedRectangle(cornerRadius: 14).fill(.ultraThickMaterial))
+                    .shadow(color: .black.opacity(0.3), radius: 20)
+                }
             }
-            Button("Cancel", role: .cancel) {}
-        } message: {
-            Text("Are you sure you want to exit Vibe Notes?")
         }
+        .clipShape(RoundedRectangle(cornerRadius: 20))
         .frame(minWidth: 300, minHeight: 400)
     }
 }
@@ -376,11 +433,13 @@ struct NoteRowView: View {
                     
                     // Toolbar & Timestamp Footer
                     HStack {
-                        HStack(spacing: 12) {
+                        HStack(spacing: 6) {
                             Button(action: {
                                 NotificationCenter.default.post(name: Notification.Name("BoldSelectedText"), object: note.id)
                             }) {
                                 Image(systemName: "bold")
+                                    .frame(width: 20, height: 20)
+                                    .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
                             
@@ -388,6 +447,8 @@ struct NoteRowView: View {
                                 NotificationCenter.default.post(name: Notification.Name("UnderlineSelectedText"), object: note.id)
                             }) {
                                 Image(systemName: "underline")
+                                    .frame(width: 20, height: 20)
+                                    .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
                             
@@ -395,6 +456,26 @@ struct NoteRowView: View {
                                 NotificationCenter.default.post(name: Notification.Name("StrikethroughSelectedText"), object: note.id)
                             }) {
                                 Image(systemName: "strikethrough")
+                                    .frame(width: 20, height: 20)
+                                    .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Button(action: {
+                                NotificationCenter.default.post(name: Notification.Name("BulletListSelectedText"), object: note.id)
+                            }) {
+                                Image(systemName: "list.bullet")
+                                    .frame(width: 20, height: 20)
+                                    .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Button(action: {
+                                NotificationCenter.default.post(name: Notification.Name("NumberedListSelectedText"), object: note.id)
+                            }) {
+                                Image(systemName: "list.number")
+                                    .frame(width: 20, height: 20)
+                                    .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
                             
@@ -403,6 +484,8 @@ struct NoteRowView: View {
                                 showDeleteConfirmation = true
                             }) {
                                 Image(systemName: "trash")
+                                    .frame(width: 20, height: 20)
+                                    .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
                         }
@@ -564,6 +647,20 @@ struct AutoExpandingTextView: NSViewRepresentable {
                     self.toggleAttribute(in: textView, key: .strikethroughStyle, value: NSUnderlineStyle.single.rawValue)
                 }
                 .store(in: &cancellables)
+                
+            NotificationCenter.default.publisher(for: Notification.Name("BulletListSelectedText"))
+                .sink { [weak self, weak textView] notification in
+                    guard let self = self, let textView = textView, let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleBulletList(in: textView)
+                }
+                .store(in: &cancellables)
+                
+            NotificationCenter.default.publisher(for: Notification.Name("NumberedListSelectedText"))
+                .sink { [weak self, weak textView] notification in
+                    guard let self = self, let textView = textView, let noteId = notification.object as? UUID, noteId == self.parent.noteId else { return }
+                    self.toggleNumberedList(in: textView)
+                }
+                .store(in: &cancellables)
         }
         
         private func toggleTrait(in textView: NSTextView, trait: NSFontDescriptor.SymbolicTraits) {
@@ -597,6 +694,78 @@ struct AutoExpandingTextView: NSViewRepresentable {
             textView.didChangeText()
         }
         
+        private func toggleBulletList(in textView: NSTextView) {
+            let fullText = textView.string
+            let nsString = fullText as NSString
+            let selectedRange = textView.selectedRange()
+            
+            // Expand selection to cover full lines
+            let lineRange = nsString.lineRange(for: selectedRange)
+            let selectedText = nsString.substring(with: lineRange)
+            let lines = selectedText.components(separatedBy: "\n")
+            
+            // Check if all non-empty lines already have bullets
+            let nonEmptyLines = lines.filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+            let allBulleted = !nonEmptyLines.isEmpty && nonEmptyLines.allSatisfy { $0.hasPrefix("• ") }
+            
+            let newLines: [String] = lines.map { line in
+                if line.trimmingCharacters(in: .whitespaces).isEmpty { return line }
+                if allBulleted {
+                    // Remove bullet
+                    return line.hasPrefix("• ") ? String(line.dropFirst(2)) : line
+                } else {
+                    // Add bullet
+                    return line.hasPrefix("• ") ? line : "• " + line
+                }
+            }
+            
+            let newText = newLines.joined(separator: "\n")
+            if textView.shouldChangeText(in: lineRange, replacementString: newText) {
+                textView.replaceCharacters(in: lineRange, with: newText)
+                textView.didChangeText()
+                textView.setSelectedRange(NSRange(location: lineRange.location, length: newText.count))
+            }
+        }
+        
+        private func toggleNumberedList(in textView: NSTextView) {
+            let fullText = textView.string
+            let nsString = fullText as NSString
+            let selectedRange = textView.selectedRange()
+            
+            let lineRange = nsString.lineRange(for: selectedRange)
+            let selectedText = nsString.substring(with: lineRange)
+            let lines = selectedText.components(separatedBy: "\n")
+            
+            // Check if all non-empty lines already have numbers
+            let numberRegex = try! NSRegularExpression(pattern: "^\\d+\\. ", options: [])
+            let nonEmptyLines = lines.filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+            let allNumbered = !nonEmptyLines.isEmpty && nonEmptyLines.allSatisfy { line in
+                numberRegex.firstMatch(in: line, options: [], range: NSRange(location: 0, length: (line as NSString).length)) != nil
+            }
+            
+            var counter = 1
+            let newLines: [String] = lines.map { line in
+                if line.trimmingCharacters(in: .whitespaces).isEmpty { return line }
+                if allNumbered {
+                    if let match = numberRegex.firstMatch(in: line, options: [], range: NSRange(location: 0, length: (line as NSString).length)) {
+                        return String((line as NSString).substring(from: match.range.length))
+                    }
+                    return line
+                } else {
+                    let result = "\(counter). " + line
+                    counter += 1
+                    return result
+                }
+            }
+            
+            let newText = newLines.joined(separator: "\n")
+            if textView.shouldChangeText(in: lineRange, replacementString: newText) {
+                textView.replaceCharacters(in: lineRange, with: newText)
+                textView.didChangeText()
+                textView.setSelectedRange(NSRange(location: lineRange.location, length: newText.count))
+            }
+        }
+        
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
             self.parent.text = textView.attributedString().toMarkdown()
@@ -628,7 +797,15 @@ extension NSAttributedString {
             result += textSegment
         }
         
-        return result
+        // Convert display bullets to markdown list syntax for storage
+        let lines = result.components(separatedBy: "\n")
+        let converted = lines.map { line -> String in
+            if line.hasPrefix("• ") {
+                return "- " + String(line.dropFirst(2))
+            }
+            return line
+        }
+        return converted.joined(separator: "\n")
     }
 }
 
@@ -654,6 +831,20 @@ extension String {
         applyMarkdown(pattern: "\\*\\*(.*?)\\*\\*", key: .font, value: NSFont.boldSystemFont(ofSize: 14))
         applyMarkdown(pattern: "__(.*?)__", key: .underlineStyle, value: NSUnderlineStyle.single.rawValue)
         applyMarkdown(pattern: "~~(.*?)~~", key: .strikethroughStyle, value: NSUnderlineStyle.single.rawValue)
+        
+        // Convert markdown list syntax to display bullets
+        let converted = attrString.string.replacingOccurrences(of: "\n- ", with: "\n• ")
+        let finalString: String
+        if attrString.string.hasPrefix("- ") {
+            finalString = "• " + String(converted.dropFirst(2))
+        } else {
+            finalString = converted
+        }
+        
+        if finalString != attrString.string {
+            let fullRange = NSRange(location: 0, length: attrString.length)
+            attrString.replaceCharacters(in: fullRange, with: finalString)
+        }
         
         return attrString
     }
