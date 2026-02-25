@@ -157,7 +157,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var newFrame = panel.frame
         newFrame.origin.x = targetX
         
-        let handleTargetX = (expand ? screenFrame.maxX - panelWidth : screenFrame.maxX) - (handleWindow?.frame.width ?? 0)
+        let handleTargetX = (expand ? screenFrame.maxX - panelWidth - 8 : screenFrame.maxX) - (handleWindow?.frame.width ?? 0)
         var handleFrame = handleWindow?.frame ?? .zero
         handleFrame.origin.x = handleTargetX
         
